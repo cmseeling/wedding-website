@@ -10,6 +10,8 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
     </p>
 
+    <HelloComponent/>
+
     <p class="home-links">
       <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
       <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
@@ -18,12 +20,18 @@
   </Layout>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+import HelloComponent from '@/components/HelloComponent.vue';
+
+export default Vue.extend({
+  components: {
+    HelloComponent
+  },
   metaInfo: {
     title: 'Hello, world!'
   }
-}
+});
 </script>
 
 <style>
