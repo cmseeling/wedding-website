@@ -1,7 +1,7 @@
 <template>
   <div>
     <span>{{count}}</span>
-    <button @click="onClick">Click me</button>
+    <button @click="onClick" class="button is-link">Click me</button>
   </div>
 </template>
 
