@@ -2,21 +2,32 @@
   "name": "wedding-website",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
+    "clean": "rimraf .cache dist functions src/.temp",
+    "prebuild": "node ./prebuild.js",
+    "build:app": "gridsome build",
+    "build:functions": "netlify-lambda build src/lambdas --config ./webpack.functions.js",
+    "build": "yarn prebuild & yarn build:functions && yarn build:app",
+    "develop": "yarn prebuild & yarn build:functions & gridsome develop",
     "explore": "gridsome explore",
-    "lint": "vue-cli-service lint"
+    "lint": "tslint --force -t stylish -c ./tslint.json './src/**/*.{ts,vue}'"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "bulma": "^0.7.5",
-    "gridsome": "^0.6.0"
+    "gridsome": "^0.6.0",
+    "lodash": "^4.17.15",
+    "promise-mysql": "^4.1.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "^3.9.0",
-    "@vue/cli-service": "^3.9.3",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/aws-lambda": "^8.10.31",
+    "@types/lodash": "^4.14.136",
+    "babel-core": "7.0.0-bridge.0",
     "gridsome-plugin-typescript": "^0.4.0",
-    "ts-jest": "^23.0.0",
+    "netlify-lambda": "^1.5.1",
+    "rimraf": "^2.6.3",
     "ts-loader": "^6.0.4",
+    "tslint": "^5.18.0",
     "typescript": "^3.5.3"
   }
 }

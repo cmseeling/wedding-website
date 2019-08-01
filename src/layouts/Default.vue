@@ -1,50 +1,35 @@
 <template>
-  <div class="layout">
+  <div class="layout container">
     <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
-      </nav>
+      <div class="columns nav">
+        <div class="column" v-for="link in navLinks" :key="link.id">
+          <g-link class="nav__link" :to="link.path">{{link.name}}</g-link>
+        </div>
+      </div>
     </header>
+    <hr/>
     <slot/>
   </div>
 </template>
 
-<static-query>
-query {
-  metaData {
-    siteName
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  props: {
+    section: String
+  },
+  data() {
+    return {
+      navLinks: [
+        { id: 1, name: 'Home', path: `/${this.section}` },
+        { id: 2, name: 'Schedule', path: `/${this.section}/schedule` },
+        { id: 3, name: 'Travel & Accommodation', path: `/${this.section}/travelaccommodations` },
+        { id: 4, name: 'RSVP', path: `/${this.section}/rsvp` },
+        { id: 5, name: 'FAQs', path: `/${this.section}/faqs` },
+      ]
+    };
   }
-}
-</static-query>
+});
+</script>
 
-<style>
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
-</style>

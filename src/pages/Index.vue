@@ -1,50 +1,18 @@
 <template>
-  <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>Hello, world!</h1>
-
-    <div class="columns">
-      <div class="column">
-        First
+  <div class="container">
+    <div class="columns is-vcentered full-height">
+      <div class="column has-text-right">
+        <g-link class="nav__link button is-link" to="/family">For Our Family</g-link>
       </div>
-      <div class="column">
-        Second
+      <div class="column has-text-left">
+        <g-link class="nav__link button is-link" to="/friends">For Our Friends</g-link>
       </div>
     </div>
-   
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
-
-    <HelloComponent/>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
-  </Layout>
+  </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
-import HelloComponent from '@/components/HelloComponent.vue';
-
-export default Vue.extend({
-  components: {
-    HelloComponent
-  },
-  metaInfo: {
-    title: 'Hello, world!'
+<style scoped>
+  .full-height {
+    height: 100vh;
   }
-});
-</script>
-
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
 </style>

@@ -4,5 +4,9 @@
 src/.temp
 node_modules
 dist
+functions
 .env
 .env.*
+OldExampleCode
+
+notes.txt
