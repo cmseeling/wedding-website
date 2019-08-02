@@ -10,7 +10,8 @@ export async function handler(event: APIGatewayEvent, context: any) {
       const data = JSON.parse(event.body);
 
       const connection = await getConnectionAsync();
-      const selectStatement = 'SELECT * FROM Guests WHERE GroupId = (SELECT GroupId FROM Guests WHERE FirstName = ? AND LastName = ?)';
+      const selectStatement =
+        'SELECT * FROM Guests WHERE GroupId = (SELECT GroupId FROM Guests WHERE FirstName = ? AND LastName = ?)';
       const values = [data.firstName, data.lastName];
       const guestGroup = await connection.query(selectStatement, values);
       console.log(guestGroup);

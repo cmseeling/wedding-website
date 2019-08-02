@@ -1,11 +1,11 @@
 export interface Guest {
-  id: string;
-  firstname: string;
-  lastname: string;
-  guesttype: string;
-  groupid: string;
-  attending: string;
-  brunch: string|null;
-  menuchoice: string|null;
-  dietaryneeds: string|null;
+  Id: string;
+  FirstName: string;
+  LastName: string;
+  GuestType: string;
+  GroupId: string;
+  Attending: string;
+  Brunch: string|null;
+  MenuChoice: string|null;
+  DietaryNeeds: string|null;
 }

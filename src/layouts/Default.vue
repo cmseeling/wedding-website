@@ -1,14 +1,16 @@
 <template>
-  <div class="layout container">
-    <header class="header">
-      <div class="columns nav">
-        <div class="column" v-for="link in navLinks" :key="link.id">
-          <g-link class="nav__link" :to="link.path">{{link.name}}</g-link>
+  <div :class="`layout ${section}-section`">
+    <div class="container">
+      <header class="header">
+        <div class="columns nav is-mobile app-nav-columns">
+          <div class="column is-one-fifth" v-for="link in navLinks" :key="link.id">
+            <g-link class="nav__link" :to="link.path">{{link.name}}</g-link>
+          </div>
         </div>
-      </div>
-    </header>
-    <hr/>
-    <slot/>
+      </header>
+      <hr/>
+      <slot/>
+    </div>
   </div>
 </template>
 
@@ -32,4 +34,14 @@ export default Vue.extend({
   }
 });
 </script>
+
+<style scoped>
+  .family-section {
+    background-color: lightgreen;
+  }
+
+  .friends-section {
+    background-color: lightblue;
+  }
+</style>
 
