@@ -31,7 +31,7 @@ const convertToClientObject = (dbObject: GuestModel): Guest => {
     DietaryNeeds: dbObject.DietaryNeeds,
   };
 
-  switch(dbObject.MenuChoice) {
+  switch (dbObject.MenuChoice) {
     default:
       guest.MenuChoice = undefined;
   }
@@ -49,10 +49,11 @@ const convertToDbObject = (clientObject: Guest): GuestModel => {
     Attending: clientObject.Attending === undefined ? 'No Response' : clientObject.Attending ? 'Yes' : 'No',
     MenuChoice: null,
     Brunch: clientObject.Brunch === undefined ? null : clientObject.Brunch ? 'Yes' : 'No',
-    DietaryNeeds: clientObject.DietaryNeeds,
+    // protect against too long of a string
+    DietaryNeeds: clientObject.DietaryNeeds ? clientObject.DietaryNeeds.substr(0, 200) : null,
   };
 
-  switch(clientObject.MenuChoice) {
+  switch (clientObject.MenuChoice) {
     default:
       dbObject.MenuChoice = null;
   }
@@ -63,5 +64,5 @@ const convertToDbObject = (clientObject: Guest): GuestModel => {
 export default {
   getGroupByGuestName,
   getGroupById,
-  saveRsvps
+  saveRsvps,
 };

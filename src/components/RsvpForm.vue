@@ -1,40 +1,45 @@
 <template>
-  <div>
-    <div class="stage1-name" v-if="showStage1">
-      <div class="columns is-vcentered is-centered full-height">
-        <div class="column is-half">
-          <label class="label" for="stage1Name">Your name as it appears on the invitation:</label>
-          <div class="level">
-            <div class="level-left name-left">
-              <input class="input" id="stage1Name" type="text" v-model="guestName" @keyup.enter="onNameSubmit"/>
-            </div>
-            <div class="level-right name-right">
-              <button :class="`button is-link ${showLoader ? 'is-loading': ''}`" id="stage1ContinueButton" @click="onNameSubmit">Continue</button>
-            </div>
-          </div>
-          <span class="has-text-danger" v-if="showNameNotFound">We couldn't find you. Please check your name.</span>
-          <span class="has-text-black" v-if="showWrongSection">
-            It looks like you were invited to a different date. Click <g-link :to="alternateLink">here</g-link> to go there.
-          </span>
-        </div>
-      </div>
-    </div>
-    <div class="stage2-responses" v-if="showStage2">
-      <div class="columns is-centered full-height">
-        <div class="column is-half">
-          <h2 class="has-text-centered">You have been invited to celebrate with us on August 8th, 2020</h2>
-          <div class="tile is-ancestor is-vertical guest-list">
-            <div class="tile is-parent is-12 is-vertical guest-tile" v-for="(guest, index) in guests" :key="guest.Id">
+  <v-container fill-height text-center>
+    <v-layout row wrap align-center v-if="showStage1">
+      <v-flex/>
+      <v-flex text-left mx-2>
+        <label class="label" for="stage1Name">Your name as it appears on the invitation:</label>
+        <v-container>
+          <v-layout row>
+            <v-flex>
+              <v-text-field
+                v-model="guestName" @keyup.enter="onNameSubmit" id="stage1Name"
+                single-line
+                outlined/>
+            </v-flex>
+            <v-flex ml-2 mt-2>
+              <v-btn :loading="showLoader" :disabled="showLoader" id="stage1ContinueButton" @click="onNameSubmit">Continue</v-btn>
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <span class="has-text-danger" v-if="showNameNotFound">We couldn't find you. Please check your name.</span>
+        <span class="has-text-black text-center" v-if="showWrongSection">
+          It looks like you were invited to a different date. Click <router-link :to="alternateLink">here</router-link> to go there.
+        </span>
+      </v-flex>
+      <v-flex/>
+    </v-layout>
+    <v-layout column v-if="showStage2">
+      <v-flex shrink>You have been invited to celebrate with us on August 8th, 2020</v-flex>
+      <v-flex v-for="(guest, index) in guests" :key="guest.Id" shrink>
+        <v-container>
+          <v-layout row>
+            <v-flex md4 offset-md4>
               <GuestEditTile v-model="guests[index]"/>
-            </div>
-            <div class="tile is-child">
-              <button class="button is-link" @click="saveGroup">Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-flex>
+      <v-flex>
+        <v-btn @click="saveGroup">Submit</v-btn>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -44,15 +49,15 @@ import { Guest } from '../models/Guest';
 import GuestEditTile from './GuestEditTile.vue';
 
 interface Data {
-  showStage1: boolean,
-  guestName: string,
-  showLoader: boolean,
-  showNameNotFound: boolean,
-  showWrongSection: boolean,
-  alternateLink: string,
+  showStage1: boolean;
+  guestName: string;
+  showLoader: boolean;
+  showNameNotFound: boolean;
+  showWrongSection: boolean;
+  alternateLink: string;
 
-  showStage2: boolean,
-  guests: Guest[]
+  showStage2: boolean;
+  guests: Guest[];
 }
 
 export default Vue.extend({
@@ -76,17 +81,18 @@ export default Vue.extend({
       guests: []
     };
   },
-  async mounted() {
-    const queryParams = window.location.href.split('?')[1];
-    if (queryParams) {
-      const groupId = queryParams.split('=')[1];
-      if (groupId) {
-        console.log(`fetching group ${groupId}`);
-        const guests = await LambdaAPI.getGroupById(groupId);
-        this.showStage1 = false;
-        this.showStage2 = true;
-        this.guests = guests;
-        console.log(this.guests);
+  watch: {
+    '$route.query.gid': {
+      immediate: true,
+      async handler(newId, oldId) {
+        if(newId) {
+          console.log(`fetching group ${newId}`);
+          const guests = await LambdaAPI.getGroupById(newId);
+          this.showStage1 = false;
+          this.showStage2 = true;
+          this.guests = guests;
+          console.log(this.guests);
+        }
       }
     }
   },
@@ -104,7 +110,7 @@ export default Vue.extend({
       const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
       console.log(this.guests);
       if (guests.length > 0) {
-        const guest = guests[0]
+        const guest = guests[0];
         if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
           this.showWrongSection = true;
           this.alternateLink = `/${guest.GuestType.toLowerCase()}/rsvp?gid=${guest.GroupId}`;
@@ -135,6 +141,7 @@ export default Vue.extend({
 
 
 <style scoped>
+
   .full-height {
     height: 100vh;
   }

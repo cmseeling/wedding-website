@@ -1,12 +1,10 @@
 <template>
-  <Layout section="family">
-    <RsvpForm section="family"/>
-  </Layout>
+  <RsvpForm :section="$route.params.guestType"/>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
 import RsvpForm from '@/components/RsvpForm.vue';
+import Vue from 'vue';
 
 export default Vue.extend({
   components: {
@@ -14,4 +12,3 @@ export default Vue.extend({
   }
 });
 </script>
-

@@ -9,7 +9,7 @@ export const updateItems = async (tableName: string, dataArray: any[]): Promise<
 
   try {
     await connection.beginTransaction();
-    const updatePromises: Promise<any>[] = [];
+    const updatePromises: Array<Promise<any>> = [];
 
     // iterate over every item to update sql row
     _.forEach(dataArray, async (dataObject) => {

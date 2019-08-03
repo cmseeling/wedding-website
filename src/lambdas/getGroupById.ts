@@ -18,12 +18,12 @@ export async function handler(event: APIGatewayEvent, context: any) {
 
       result = {
         statusCode: 200,
-        body: JSON.stringify(guestGroup)
-      }
+        body: JSON.stringify(guestGroup),
+      };
     } else {
       result = {
         statusCode: 400,
-        body: 'No data submitted'
+        body: 'No data submitted',
       };
     }
 
@@ -32,7 +32,7 @@ export async function handler(event: APIGatewayEvent, context: any) {
     console.log(err);
     return {
       statusCode: 500,
-      body: JSON.stringify(err)
+      body: JSON.stringify(err),
     };
   }
 }

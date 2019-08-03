@@ -1,14 +1,34 @@
-# Default starter for Gridsome
+# wedding-website
 
-This is the project you get when you run `gridsome create new-project`.
+## Project setup
+```
+npm install
+```
 
-### 1. Install Gridsome CLI tool if you don't have
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-`npm install --global @gridsome/cli`
+### Compiles and minifies for production
+```
+npm run build
+```
 
-### 2. Create a Gridsome project
+### Run your tests
+```
+npm run test
+```
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Run your unit tests
+```
+npm run test:unit
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

@@ -9,6 +9,6 @@ export default {
     Attending: 'Attending',
     Brunch: 'Brunch',
     MenuChoice: 'MenuChoice',
-    DietaryNeeds: 'DietaryNeeds'
-  }
+    DietaryNeeds: 'DietaryNeeds',
+  },
 };

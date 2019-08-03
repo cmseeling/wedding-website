@@ -1,7 +1,7 @@
 import { APIGatewayEvent } from 'aws-lambda';
 import { Result } from './interfaces/Result';
-import { updateItems } from './mysql/updateItems';
 import Constants from './mysql/Constants';
+import { updateItems } from './mysql/updateItems';
 
 export async function handler(event: APIGatewayEvent, context: any) {
   try {
@@ -12,12 +12,12 @@ export async function handler(event: APIGatewayEvent, context: any) {
       console.log(updateResult);
       result = {
         statusCode: 200,
-        body: JSON.stringify(updateResult)
+        body: JSON.stringify(updateResult),
       };
     } else {
       result = {
         statusCode: 200,
-        body: ''
+        body: '',
       };
     }
     return result;
@@ -25,7 +25,7 @@ export async function handler(event: APIGatewayEvent, context: any) {
     console.log(err);
     return {
       statusCode: 500,
-      body: JSON.stringify(err)
+      body: JSON.stringify(err),
     };
   }
 }
