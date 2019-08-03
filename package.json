@@ -1,22 +1,48 @@
 {
   "name": "wedding-website",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "gridsome build",
-    "develop": "gridsome develop",
-    "explore": "gridsome explore",
-    "lint": "vue-cli-service lint"
+    "clean": "rimraf dist functions",
+    "prebuild": "node ./prebuild.js",
+    "serve": "npm run prebuild & vue-cli-service serve",
+    "build:app": "vue-cli-service build",
+    "build:functions": "netlify-lambda build src/lambdas --config ./webpack.functions.js",
+    "build": "npm run prebuild & npm run build:functions && npm run build:app",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "bulma": "^0.7.5",
-    "gridsome": "^0.6.0"
+    "@fortawesome/fontawesome-free": "^5.10.1",
+    "axios": "^0.19.0",
+    "core-js": "^2.6.5",
+    "lodash": "^4.17.15",
+    "promise-mysql": "^4.1.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuetify": "^2.0.4"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/aws-lambda": "^8.10.31",
+    "@types/jest": "^23.1.4",
+    "@types/lodash": "^4.14.136",
+    "@types/node": "^12.6.9",
+    "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-typescript": "^3.9.0",
-    "@vue/cli-service": "^3.9.3",
-    "gridsome-plugin-typescript": "^0.4.0",
+    "@vue/cli-plugin-unit-jest": "^3.9.0",
+    "@vue/cli-service": "^3.9.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "dotenv": "^8.0.0",
+    "netlify-lambda": "^1.5.1",
+    "rimraf": "^2.6.3",
+    "sass": "^1.17.4",
+    "sass-loader": "^7.1.0",
     "ts-jest": "^23.0.0",
-    "ts-loader": "^6.0.4",
-    "typescript": "^3.5.3"
+    "typescript": "^3.4.3",
+    "vue-cli-plugin-vuetify": "^0.6.1",
+    "vue-template-compiler": "^2.6.10",
+    "vuetify-loader": "^1.2.2"
   }
 }
