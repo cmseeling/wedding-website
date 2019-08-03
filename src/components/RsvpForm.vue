@@ -20,69 +20,12 @@
       </div>
     </div>
     <div class="stage2-responses" v-if="showStage2">
-      <div class="columns is-vcentered is-centered full-height">
+      <div class="columns is-centered full-height">
         <div class="column is-half">
           <h2 class="has-text-centered">You have been invited to celebrate with us on August 8th, 2020</h2>
           <div class="tile is-ancestor is-vertical guest-list">
-            <div class="tile is-parent is-12 is-vertical guest-tile" v-for="guest in guests" :key="guest.Id">
-              <div class="tile is-child attending">
-                <div>Will this person be attending?</div>
-                <div class="guest-name">{{guest.FirstName}} {{guest.LastName}}</div>
-                <div class="field">
-                  <div class="control">
-                    <label class="radio">
-                      <input type="radio" name="attending" value="Yes" v-model="guest.Attending"/>
-                      Yes
-                    </label>
-                    <label class="radio">
-                      <input type="radio" name="attending" value="No" v-model="guest.Attending"/>
-                      No
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="tile is-parent is-vertical" v-if="guest.Attending === 'Yes'">
-                <div class="tile is-parent">
-                  <div class="tile is-child menu-choice">
-                    <div class="field">
-                      <div class="control">
-                        <label class="label" for="menuChoice">Menu Option</label>
-                        <div class="select menu-select-container">
-                          <select v-model="guest.MenuChoice" id="menuChoice">
-                            <option value="null">Select...</option>
-                            <option value="Choice1">Choice 1</option>
-                            <option value="Choice2">Choice 2</option>
-                            <option value="Vegetarian">Vegetarian</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tile is-child">
-                    <div class="field">
-                      <div class="control">
-                        <label class="label" for="dietaryRestrictions">Dietary Restrictions</label>
-                        <input type="text" class="input" id="dietaryRestrictions" maxlength="200" v-model="guest.DietaryNeeds"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="tile is-child">
-                  <span>Will you be joining us for brunch on Sunday morning?</span>
-                  <div class="field">
-                      <div class="control">
-                        <label class="radio">
-                          <input type="radio" name="brunch" value="Yes" v-model="guest.Brunch"/>
-                          Yes
-                        </label>
-                        <label class="radio">
-                          <input type="radio" name="brunch" value="No" v-model="guest.Brunch"/>
-                          No
-                        </label>
-                      </div>
-                    </div>
-                </div>
-              </div>
+            <div class="tile is-parent is-12 is-vertical guest-tile" v-for="(guest, index) in guests" :key="guest.Id">
+              <GuestEditTile v-model="guests[index]"/>
             </div>
             <div class="tile is-child">
               <button class="button is-link" @click="saveGroup">Submit</button>
@@ -98,6 +41,7 @@
 import Vue from 'vue';
 import LambdaAPI from '../api/LambdaAPI';
 import { Guest } from '../models/Guest';
+import GuestEditTile from './GuestEditTile.vue';
 
 interface Data {
   showStage1: boolean,
@@ -113,6 +57,9 @@ interface Data {
 
 export default Vue.extend({
   name: 'RsvpForm',
+  components: {
+    GuestEditTile
+  },
   props: {
     section: String
   },
@@ -139,6 +86,7 @@ export default Vue.extend({
         this.showStage1 = false;
         this.showStage2 = true;
         this.guests = guests;
+        console.log(this.guests);
       }
     }
   },
@@ -154,6 +102,7 @@ export default Vue.extend({
       console.log(lastName);
 
       const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
+      console.log(this.guests);
       if (guests.length > 0) {
         const guest = guests[0]
         if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
@@ -178,6 +127,7 @@ export default Vue.extend({
 
     async saveGroup() {
       console.log(this.guests);
+      await LambdaAPI.saveRsvps(this.guests);
     }
   }
 });
@@ -208,18 +158,5 @@ export default Vue.extend({
   .guest-tile {
     border: 1px black solid;
     background-color: white;
-  }
-
-  .menu-select-container {
-    width: 99%;
-  }
-
-  #menuChoice {
-    width: 100%;
-  }
-
-  .guest-name {
-    font-size: 1.25rem;
-    font-weight: bolder;
   }
 </style>

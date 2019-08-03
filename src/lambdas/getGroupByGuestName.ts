@@ -11,7 +11,7 @@ export async function handler(event: APIGatewayEvent, context: any) {
 
       const connection = await getConnectionAsync();
       const selectStatement =
-        'SELECT * FROM Guests WHERE GroupId = (SELECT GroupId FROM Guests WHERE FirstName = ? AND LastName = ?)';
+        'SELECT * FROM Guests WHERE GroupId = (SELECT GroupId FROM Guests WHERE FirstName = ? AND LastName = ?) ORDER BY Id';
       const values = [data.firstName, data.lastName];
       const guestGroup = await connection.query(selectStatement, values);
       console.log(guestGroup);
