@@ -7,13 +7,14 @@
         <v-container>
           <v-layout row>
             <v-flex>
-              <v-text-field
+              <v-text-field class="name-input"
                 v-model="guestName" @keyup.enter="onNameSubmit" id="stage1Name"
                 single-line
+                hide-details
                 outlined/>
             </v-flex>
             <v-flex ml-2 mt-2>
-              <v-btn :loading="showLoader" :disabled="showLoader" id="stage1ContinueButton" @click="onNameSubmit">Continue</v-btn>
+              <v-btn :loading="showGroupLoader" :disabled="showGroupLoader" id="stage1ContinueButton" @click="onNameSubmit">Continue</v-btn>
             </v-flex>
           </v-layout>
         </v-container>
@@ -35,8 +36,11 @@
           </v-layout>
         </v-container>
       </v-flex>
+      <v-flex v-if="showSaveSuccessMessage">
+        <div class="success-text">Your responses have been saved. Thank you!</div>
+      </v-flex>
       <v-flex>
-        <v-btn @click="saveGroup">Submit</v-btn>
+        <v-btn :loading="showGroupLoader" :disabled="showGroupLoader" @click="saveGroup">Submit</v-btn>
       </v-flex>
     </v-layout>
   </v-container>
@@ -51,13 +55,15 @@ import GuestEditTile from './GuestEditTile.vue';
 interface Data {
   showStage1: boolean;
   guestName: string;
-  showLoader: boolean;
+  showGroupLoader: boolean;
   showNameNotFound: boolean;
   showWrongSection: boolean;
   alternateLink: string;
 
   showStage2: boolean;
   guests: Guest[];
+  showSaveLoader: boolean;
+  showSaveSuccessMessage: boolean;
 }
 
 export default Vue.extend({
@@ -72,26 +78,30 @@ export default Vue.extend({
     return {
       showStage1: true,
       guestName: '',
-      showLoader: false,
+      showGroupLoader: false,
       showNameNotFound: false,
       showWrongSection: false,
       alternateLink: '',
 
       showStage2: false,
-      guests: []
+      guests: [],
+      showSaveLoader: false,
+      showSaveSuccessMessage: false
     };
   },
   watch: {
     '$route.query.gid': {
       immediate: true,
       async handler(newId, oldId) {
-        if(newId) {
-          console.log(`fetching group ${newId}`);
+        this.resetStage1Form();
+        this.resetStage2Form();
+        if (newId) {
+          // console.log(`fetching group ${newId}`);
           const guests = await LambdaAPI.getGroupById(newId);
           this.showStage1 = false;
           this.showStage2 = true;
           this.guests = guests;
-          console.log(this.guests);
+          // console.log(this.guests);
         }
       }
     }
@@ -100,15 +110,15 @@ export default Vue.extend({
     async onNameSubmit() {
       this.resetStage1Form();
 
-      this.showLoader = true;
-      console.log(this.guestName);
+      this.showGroupLoader = true;
+      // console.log(this.guestName);
       const firstName = this.guestName.slice(0, this.guestName.lastIndexOf(' '));
       const lastName = this.guestName.slice(this.guestName.lastIndexOf(' ') + 1, this.guestName.length);
-      console.log(firstName);
-      console.log(lastName);
+      // console.log(firstName);
+      // console.log(lastName);
 
       const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
-      console.log(this.guests);
+      // console.log(this.guests);
       if (guests.length > 0) {
         const guest = guests[0];
         if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
@@ -123,47 +133,35 @@ export default Vue.extend({
         this.showNameNotFound = true;
       }
 
-      this.showLoader = false;
+      this.showGroupLoader = false;
     },
 
     resetStage1Form() {
       this.showNameNotFound = false;
       this.showWrongSection = false;
+      this.alternateLink = '';
+    },
+
+    resetStage2Form() {
+      this.showStage1 = true;
+      this.showStage2 = false;
+      this.guests = [];
+      this.showSaveSuccessMessage = false;
     },
 
     async saveGroup() {
-      console.log(this.guests);
+      // console.log(this.guests);
+      this.showSaveLoader = true;
       await LambdaAPI.saveRsvps(this.guests);
+      this.showSaveLoader = false;
+      this.showSaveSuccessMessage = true;
     }
   }
 });
 </script>
 
-
 <style scoped>
-
-  .full-height {
-    height: 100vh;
-  }
-
-  #stage1Loader {
-    margin-top: 0.5rem;
-  }
-
-  .name-left {
-    width: 80%;
-  }
-
-  .name-right {
-    width: 20%;
-  }
-
-  .guest-list {
-    margin-top: 0.5rem;
-  }
-
-  .guest-tile {
-    border: 1px black solid;
-    background-color: white;
+  .name-input {
+    background-color: white !important;
   }
 </style>
