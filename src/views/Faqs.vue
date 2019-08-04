@@ -67,8 +67,8 @@
                       <span class="time-text">A:</span>
                     </v-flex>
                     <v-flex md10>
-                      This is a celebration of our wedding with our family/friends. We will be getting legally married ahead of time at the courthouse 
-                      with our parents in attendance.
+                      We met on OkCupid, which is a dating website. 
+                      We had coffee at a coffee shop, and then we walked around a lake in the pouring rain, and then we got ice cream.
                     </v-flex>
                   </v-list-item-content>
                 </v-list-item>
