@@ -3,7 +3,7 @@
     <v-container text-center>
       <v-layout row>
         <v-flex/>
-        <v-flex shrink>
+        <v-flex md6>
           <v-layout column class="info-text-container">
             <v-flex ma-5 text-left class="info-text">
               <p>We will be at Bryant Lake Regional Park pavilion, which is located in Eden Prairie, a suburb of Minneapolis.</p>
@@ -18,7 +18,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            1:00 - 1:30
+                            <span class="time-text">1:00 - 1:30</span>
                           </v-flex>
                           <v-flex md10>
                             Arrival
@@ -28,7 +28,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            1:30 - 2:00
+                            <span class="time-text">1:30 - 2:00</span>
                           </v-flex>
                           <v-flex md10>
                             Welcome, speeches, etc.
@@ -38,7 +38,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            2:00 - 4:30
+                            <span class="time-text">2:00 - 4:30</span>
                           </v-flex>
                           <v-flex md10>
                             Eat snacks!  Enjoy the park!  (Or stay indoors and play board games and speculate about when the rain will stop.)
@@ -48,7 +48,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            4:30
+                            <span class="time-text">4:30</span>
                           </v-flex>
                           <v-flex md10>
                             Dinner
@@ -58,7 +58,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            5:30 - 8:00
+                            <span class="time-text">5:30 - 8:00</span>
                           </v-flex>
                           <v-flex md10>
                             Board games and dessert (or enjoy the park, if it was raining earlier)
@@ -77,7 +77,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            9:00 - 11:00
+                            <span class="time-text">9:00 - 11:00</span>
                           </v-flex>
                           <v-flex md10>
                             Breakfast at the hotel
@@ -124,13 +124,8 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-  .info-text-container {
-    border: 1px black solid;
-    background-color: rgba(255,255,255,0.6);
-  }
-
-  .info-text {
-    font-family: 'Montserrat', sans-serif;
+  .time-text {
+    font-weight: bold;
   }
 </style>
 

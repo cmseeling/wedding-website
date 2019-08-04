@@ -28,7 +28,7 @@ export default Vue.extend({
     return {
       navLinks: [
         { id: 1, name: 'Home', path: `/${this.$route.params.guestType}` },
-        { id: 2, name: 'Schedule', path: `/${this.$route.params.guestType}/schedule` },
+        { id: 2, name: 'Venue & Schedule', path: `/${this.$route.params.guestType}/schedule` },
         { id: 3, name: 'Travel & Accommodation', path: `/${this.$route.params.guestType}/accommodations` },
         { id: 4, name: 'R.S.V.P.', path: `/${this.$route.params.guestType}/rsvp` },
         { id: 5, name: 'FAQs', path: `/${this.$route.params.guestType}/faqs` },
@@ -63,4 +63,14 @@ export default Vue.extend({
     font-family: 'Courgette', cursive;
     font-size: 1.5rem;
   }
+
+  .info-text-container {
+    border: 1px black solid;
+    background-color: rgba(255,255,255,0.6);
+  }
+
+  .info-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
 </style>
