@@ -50,11 +50,13 @@ export default Vue.extend({
 
 <style>
   .friends-main-content {
-    background-color: lightblue;
+    background: rgb(0,0,128);
+    background: linear-gradient(330deg, rgba(0,0,128,1) 2%, rgba(173,216,230,1) 40%);
   }
 
   .family-main-content {
-    background-color: rgba(128,0,0,0.45);
+    background: rgb(0,0,128);
+    background: linear-gradient(30deg, rgba(0,0,128,1) 2%, rgba(173,216,230,1) 40%);
   }
 
   .header-link {
