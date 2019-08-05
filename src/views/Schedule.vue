@@ -48,7 +48,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            <span class="time-text">4:30</span>
+                            <span class="time-text">4:30 - 5:30</span>
                           </v-flex>
                           <v-flex md10>
                             Dinner

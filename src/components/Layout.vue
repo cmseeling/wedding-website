@@ -16,6 +16,18 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <v-footer class="grey--text lighten-5">
+      <v-layout column text-center>
+        <v-flex>
+          <div class="info-text">
+            Created by Chris. For help with the website or for other questions, contact Chris or Malka by email: 
+            (<a href="mailto:cmseeling@gmail.com" class="blue-grey--text">cmseeling@gmail.com</a>, <a href="mailto:malka.key@gmail.com" class="blue-grey--text">malka.key@gmail.com</a>) 
+            or by phone: (218-591-5354, 612-999-2571).
+          </div>
+          <div class="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </v-flex>
+      </v-layout>
+    </v-footer>
   </v-content>
 </template>
 
@@ -37,12 +49,7 @@ export default Vue.extend({
   },
   computed: {
     textColor() {
-      if (this.$route.params.guestType.toLowerCase() === 'family') {
-        return 'indigo--text darken-4';
-      } else {
-        // return 'red--text accent-4';
-        return 'blue-grey--text darken-4';
-      }
+      return 'blue-grey--text darken-4';
     }
   }
 });
@@ -73,4 +80,11 @@ export default Vue.extend({
     font-family: 'Montserrat', sans-serif;
   }
 
+  .icon-attribution {
+    font-size: 0.5rem;
+  }
+
+  footer {
+    background-color: navy !important;
+  }
 </style>
