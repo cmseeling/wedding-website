@@ -6,8 +6,8 @@
         <v-flex md6>
           <v-layout column class="info-text-container">
             <v-flex ma-5 text-left class="info-text">
-              <v-layout row></v-layout>
-              <v-list class="faq-list">
+              <p>More info coming soon!</p>
+              <!-- <v-list class="faq-list">
                 <v-list-item class="faq-item">
                   <v-list-item-content>
                     <v-flex md1 xs1 text-center>
@@ -24,7 +24,7 @@
                       <span class="time-text">A:</span>
                     </v-flex>
                     <v-flex md10>
-                      This is a celebration of our wedding with our family/friends. We will be getting legally married ahead of time at the courthouse with our parents in attendance.
+                      This is a celebration of our wedding with our family/friends. We will be getting legally married ahead of time at a small ceremony with our parents in attendance.
                     </v-flex>
                   </v-list-item-content>
                 </v-list-item>
@@ -72,7 +72,7 @@
                     </v-flex>
                   </v-list-item-content>
                 </v-list-item>
-              </v-list>
+              </v-list> -->
             </v-flex>
           </v-layout>
         </v-flex>
