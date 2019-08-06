@@ -15,8 +15,8 @@
 
 <style scoped>
   .index-page {
-    background: rgb(173,216,230);
-    background: linear-gradient(270deg, rgba(128,0,0,1) 65%, rgba(173,216,230,1) 100%);
+    background: rgb(0,0,128);
+    background: linear-gradient(0deg, rgba(0,0,128,1) 2%, rgba(173,216,230,1) 40%);
   }
 </style>
 

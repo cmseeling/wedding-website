@@ -6,7 +6,8 @@
         <v-flex md6>
           <v-layout column class="info-text-container">
             <v-flex ma-5 text-left class="info-text">
-              <p>We will be at Bryant Lake Regional Park pavilion, which is located in Eden Prairie, a suburb of Minneapolis.</p>
+              <p>More info coming soon!</p>
+              <!-- <p>We will be at Bryant Lake Regional Park pavilion, which is located in Eden Prairie, a suburb of Minneapolis.</p>
               <p>The park address is 6800 Rowland Rd, Eden Prairie, MN 55344.  The park website is <a href="https://www.threeriversparks.org/location/bryant-lake-regional-park">here.</a></p>
               <p>We may play this by ear a little to take advantage of/avoid the weather, but here’s the general plan:</p>
               <v-card>
@@ -86,7 +87,7 @@
                       </v-list-item>
                     </v-list>
                 </v-card-text>
-              </v-card>
+              </v-card> -->
             </v-flex>
           </v-layout>
         </v-flex>

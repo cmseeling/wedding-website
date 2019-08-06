@@ -7,6 +7,9 @@
           <v-layout column class="info-text-container">
             <v-flex ma-5 text-left class="info-text">
               <p>
+                More info coming soon!
+              </p>
+              <!-- <p>
                 If you are flying in, you will definitely want to use MSP airport. 
                 There are two terminals, which are located one stop apart on the light rail (you can ride the light rail between them for free).
               </p>
@@ -19,7 +22,7 @@
                 Unfortunately, the hotel and venue are not in an area that is well served by public transit; if you are absolutely set on using transit, call Malka for extensive details. 
                 If you do not want to rent a car, MSP is well served by rideshare services (Lyft, etc.) as well as taxis; 
                 I have also had good luck with the shared shuttle service <a href="https://www.supershuttle.com/">SuperShuttle</a>.
-              </p>
+              </p> -->
             </v-flex>
           </v-layout>
         </v-flex>
