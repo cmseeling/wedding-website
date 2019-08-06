@@ -42,7 +42,7 @@ export default Vue.extend({
         { id: 1, name: 'Home', path: `/${this.$route.params.guestType}` },
         { id: 2, name: 'Venue & Schedule', path: `/${this.$route.params.guestType}/schedule` },
         { id: 3, name: 'Travel & Accommodation', path: `/${this.$route.params.guestType}/accommodations` },
-        // { id: 4, name: 'R.S.V.P.', path: `/${this.$route.params.guestType}/rsvp` },
+        { id: 4, name: 'R.S.V.P.', path: `/${this.$route.params.guestType}/rsvp` },
         { id: 5, name: 'FAQs', path: `/${this.$route.params.guestType}/faqs` },
       ]
     };

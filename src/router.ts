@@ -39,11 +39,11 @@ const router = new Router({
       name: 'faqs',
       component: Faqs
     },
-    // {
-    //   path: '/:guestType/rsvp',
-    //   name: 'rsvp',
-    //   component: Rsvp
-    // },
+    {
+      path: '/:guestType/rsvp',
+      name: 'rsvp',
+      component: Rsvp
+    },
     {
       path: '/:guestType/schedule',
       name: 'schedule',
