@@ -100,6 +100,7 @@ export default Vue.extend({
 <style scoped>
   .faq-list {
     background-color: transparent;
+    padding: 0px;
   }
 </style>
 

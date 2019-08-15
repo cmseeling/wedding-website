@@ -11,9 +11,10 @@
             <v-flex ma-5 text-left class="info-text">
               <h2>Venue</h2>
               <v-card>
-                <v-card-title>
+                <!-- <v-card-title>
                   Location
-                </v-card-title>
+                </v-card-title> -->
+                <v-card-title></v-card-title>
                 <v-card-text class="subtitle-1">
                   <p>We will be at Cleary Lake Regional Park pavilion, which is located in Prior Lake, a suburb of Minneapolis.</p>
                   <p>The park address is <strong>18106 Texas Ave, Prior Lake, MN 55372</strong>.  The park website is <a href="https://www.threeriversparks.org/location/cleary-lake-regional-park">here.</a></p>
@@ -25,6 +26,7 @@
             <v-flex ma-5 text-left class="info-text">
               <h2>Schedule</h2>
               <v-card>
+                <v-card-title></v-card-title>
                 <v-card-text class="subtitle-1">
                   <p>Guests may begin arriving at 1:30pm.</p>
                   <p>We expect the event to run from about 2:00pm to 8:00pm.</p>
