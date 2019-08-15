@@ -3,8 +3,8 @@
     <v-container text-center>
       <v-layout column>
         <v-flex>
-          <!-- <h1 :class="headerClass">Welcome! Our wedding reception with our {{$route.params.guestType}} will be {{date}}.</h1> -->
-          <h1 :class="headerClass">Welcome! More information coming soon. Staging Environment</h1>
+          <h1 :class="headerClass">Welcome! Our wedding reception with our {{$route.params.guestType}} will be {{date}}.</h1>
+          <h1 style="background-color: orange">Staging Environment - this banner will not appear on live site</h1>
         </v-flex>
         <v-flex v-if="$vuetify.breakpoint.mdAndUp" mt-3>
           <v-img src="/images/city_museum_cropped.jpg" aspect-ratio="3" contain/>

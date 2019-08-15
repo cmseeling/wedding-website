@@ -6,11 +6,11 @@
         <v-flex md6>
           <v-layout column class="info-text-container">
             <v-flex ma-5 text-left class="info-text">
+              <h2>Frequently Asked Questions</h2>
               <v-card>
                 <v-card-text class="subtitle-1">
-                  <p>More info coming soon!</p>
-                  <!-- <v-list class="faq-list">
-                    <v-list-item class="faq-item">
+                  <v-list class="faq-list">
+                    <!-- <v-list-item class="faq-item">
                       <v-list-item-content>
                         <v-flex md1 xs1 text-center>
                           <span class="time-text">Q:</span>
@@ -30,8 +30,8 @@
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
-                    <v-divider/>
-                    <v-list-item class="faq-item">
+                    <v-divider/> -->
+                    <!-- <v-list-item class="faq-item">
                       <v-list-item-content>
                         <v-flex md1 xs1 text-center>
                           <span class="time-text">Q:</span>
@@ -51,8 +51,8 @@
                           The atmosphere we are going for here is Festive Picnic, so this is going to be on the casual side.
                         </v-flex>
                       </v-list-item-content>
-                    </v-list-item>
-                    <v-divider/>
+                    </v-list-item> -->
+                    <!-- <v-divider/> -->
                     <v-list-item class="faq-item">
                       <v-list-item-content>
                         <v-flex md1 xs1 text-center>
@@ -74,7 +74,7 @@
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
-                  </v-list> -->
+                  </v-list>
                 </v-card-text>
               </v-card>
             </v-flex>
