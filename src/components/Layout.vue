@@ -71,6 +71,10 @@ export default Vue.extend({
     font-size: 1.5rem;
   }
 
+  h2 {
+    font-family: 'Courgette', cursive;
+  }
+
   .info-text-container {
     border: 1px black solid;
     background-color: rgba(255,255,255,0.6);
