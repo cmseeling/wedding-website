@@ -5,12 +5,34 @@
         <v-flex/>
         <v-flex md6>
           <v-layout column class="info-text-container">
+            <v-flex class="large-image">
+              <v-img src="/images/pavilion.jpg"/>
+            </v-flex>
             <v-flex ma-5 text-left class="info-text">
-              <p>More info coming soon!</p>
-              <!-- <p>We will be at Bryant Lake Regional Park pavilion, which is located in Eden Prairie, a suburb of Minneapolis.</p>
-              <p>The park address is 6800 Rowland Rd, Eden Prairie, MN 55344.  The park website is <a href="https://www.threeriversparks.org/location/bryant-lake-regional-park">here.</a></p>
-              <p>We may play this by ear a little to take advantage of/avoid the weather, but here’s the general plan:</p>
+              <h2>Venue</h2>
               <v-card>
+                <!-- <v-card-title>
+                  Location
+                </v-card-title> -->
+                <v-card-title></v-card-title>
+                <v-card-text class="subtitle-1">
+                  <p>We will be at Cleary Lake Regional Park pavilion, which is located in Prior Lake, a suburb of Minneapolis.</p>
+                  <p>The park address is <strong>18106 Texas Ave, Prior Lake, MN 55372</strong>.  The park website is <a href="https://www.threeriversparks.org/location/cleary-lake-regional-park">here.</a></p>
+                  <!-- <p>We may play this by ear a little to take advantage of/avoid the weather, but here’s the general plan:</p> -->
+                  <!-- <strong>Schedule information coming soon!</strong> -->
+                </v-card-text>
+              </v-card>
+            </v-flex>
+            <v-flex ma-5 text-left class="info-text">
+              <h2>Schedule</h2>
+              <v-card>
+                <v-card-title>{{saturday}}</v-card-title>
+                <v-card-text class="subtitle-1">
+                  <p>We are planning on starting the reception in the early afternoon.</p>
+                  <p>More details coming soon!</p>
+                </v-card-text>
+              </v-card>
+              <!-- <v-card>
                 <v-card-title>
                   {{saturday}}
                 </v-card-title>
@@ -89,6 +111,9 @@
                 </v-card-text>
               </v-card> -->
             </v-flex>
+            <v-flex class="large-image">
+              <v-img src="/images/deck_view.jpg"/>
+            </v-flex>
           </v-layout>
         </v-flex>
         <v-flex/>
@@ -127,6 +152,10 @@ export default Vue.extend({
 <style scoped>
   .time-text {
     font-weight: bold;
+  }
+
+  .large-image {
+    margin: 20px;
   }
 </style>
 

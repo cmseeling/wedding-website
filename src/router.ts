@@ -34,11 +34,11 @@ const router = new Router({
       name: 'accommodations',
       component: Accommodations
     },
-    {
-      path: '/:guestType/faqs',
-      name: 'faqs',
-      component: Faqs
-    },
+    // {
+    //   path: '/:guestType/faqs',
+    //   name: 'faqs',
+    //   component: Faqs
+    // },
     // {
     //   path: '/:guestType/rsvp',
     //   name: 'rsvp',
