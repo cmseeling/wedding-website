@@ -11,7 +11,7 @@
                 <v-card-title></v-card-title>
                 <v-card-text class="subtitle-1">
                   <p>
-                    If you are flying in, you will definitely want to use MSP airport. 
+                    If you are flying in, the local airport will be MSP. 
                     There are two terminals, which are located one stop apart on the light rail (you can ride the light rail between them for free).
                   </p>
                 </v-card-text>

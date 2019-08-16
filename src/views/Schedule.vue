@@ -26,11 +26,9 @@
             <v-flex ma-5 text-left class="info-text">
               <h2>Schedule</h2>
               <v-card>
-                <v-card-title></v-card-title>
+                <v-card-title>{{saturday}}</v-card-title>
                 <v-card-text class="subtitle-1">
-                  <p>Guests may begin arriving at 1:30pm.</p>
-                  <p>We expect the event to run from about 2:00pm to 8:00pm.</p>
-                  <br/>
+                  <p>We are planning on starting the reception in the early afternoon.</p>
                   <p>More details coming soon!</p>
                 </v-card-text>
               </v-card>
