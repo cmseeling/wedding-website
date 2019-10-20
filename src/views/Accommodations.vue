@@ -30,9 +30,9 @@
                     See the FAQ for information on taking the light rail.
                   </p>
                   <p>
-                    We will be providing a shuttle from the hotel to the wedding venue, leaving at 1:00 and returning at 6:00 and 8:00 the day of the wedding.
+                    We will be providing a shuttle from the hotel to the reception venue, leaving at 1:00pm and returning at 6:00pm and 8:00pm.
                     Please note on your RSVP if you plan to use the shuttle. If you want to sight-see, many attractions in Minneapolis are also located along the same
-                    light rail line as the hotel and airport. Lyft and Uber are also available. If you want more flexibility in terms of arrival/departure from the wedding,
+                    light rail line as the hotel and airport. Lyft and Uber are also available. If you want more flexibility in terms of arrival/departure from the reception,
                     or if you want to do a lot of suburban sightseeing, you may want to rent a car. See the FAQs page for more information about the light rail.
                   </p>
                 </v-card-text>

@@ -50,8 +50,8 @@
                           <span class="qa-marker">A:</span>
                         </v-flex>
                         <v-flex md10>
-                          Please dress for the weather! The pavilion is an enclosed building, but it does not have AC, and we are hoping to take advantage of the park. 
-                          The atmosphere we are going for here is Festive Picnic, so this is going to be on the casual side.
+                          Casual dress - please dress for the weather! The pavilion is an enclosed building, but it does not have AC, and we are hoping to take advantage of the park. 
+                          The atmosphere we are going for here is "festive picnic." Shorts/jeans are welcome.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
@@ -120,8 +120,8 @@
                           <span class="qa-marker">A:</span>
                         </v-flex>
                         <v-flex md10>
-                          We met on OkCupid, which is a dating website. 
-                          We had coffee at a coffee shop, and then we walked around a lake in the pouring rain, and then we got ice cream.
+                          We met on OkCupid, which is a dating website. We had coffee at Uncommon Grounds, and then we walked around Lake of the Isles in the pouring
+                          rain. After that, we went to get ice cream from Sebastian Joe's.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
@@ -156,7 +156,7 @@
                           <p>
                             If you are arriving in Terminal 2 (Southwest, Sun Country, Jetblue, Condor, or Icelandair), signs will direct you to the light rail station
                             directly, no tram needed. Ride the light rail north two stops to the American Blvd/34th Ave Station (you want to ride to Downtown Minneapolis,
-                            not to the Mall of America).
+                            not to the Mall of America). It is a very short walk from the station to the hotel.
                           </p>
                         </v-flex>
                       </v-list-item-content>
