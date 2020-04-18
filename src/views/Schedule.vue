@@ -133,16 +133,16 @@ export default Vue.extend({
   computed: {
     saturday() {
       if (this.$route.params.guestType.toLowerCase() === 'family') {
-        return 'Saturday, August 8';
+        return 'Saturday, August 7';
       } else {
-        return 'Saturday August 15';
+        return 'Saturday August 14';
       }
     },
     sunday() {
       if (this.$route.params.guestType.toLowerCase() === 'family') {
-        return 'Sunday, August 9';
+        return 'Sunday, August 8';
       } else {
-        return 'Sunday August 16';
+        return 'Sunday August 15';
       }
     }
   }
