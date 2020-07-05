@@ -6,6 +6,7 @@ import Home from './views/Home.vue';
 import Index from './views/Index.vue';
 import Rsvp from './views/Rsvp.vue';
 import Schedule from './views/Schedule.vue';
+import Registry from './views/Registry.vue';
 
 Vue.use(Router);
 
@@ -49,6 +50,11 @@ const router = new Router({
       name: 'schedule',
       component: Schedule
     },
+    {
+      path: '/:guestType/registry',
+      name: 'registry',
+      component: Registry
+    }
   ],
 });
 
