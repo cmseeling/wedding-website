@@ -15,7 +15,6 @@
                   <v-img src="/images/ceremonypics/ChrisandMalka-147.jpg"/>
                   <v-img src="/images/ceremonypics/ChrisandMalka-235.jpg"/>
                   <v-img src="/images/ceremonypics/ChrisandMalka-210.jpg"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka3.jpg"/>
                 </v-col>
               </v-row>
             </v-flex>
