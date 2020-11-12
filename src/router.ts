@@ -4,9 +4,10 @@ import Accommodations from './views/Accommodations.vue';
 import Faqs from './views/Faqs.vue';
 import Home from './views/Home.vue';
 import Index from './views/Index.vue';
+import Pictures from './views/Pictures.vue';
+import Registry from './views/Registry.vue';
 import Rsvp from './views/Rsvp.vue';
 import Schedule from './views/Schedule.vue';
-import Registry from './views/Registry.vue';
 
 Vue.use(Router);
 
@@ -54,6 +55,11 @@ const router = new Router({
       path: '/:guestType/registry',
       name: 'registry',
       component: Registry
+    },
+    {
+      path: '/:guestType/pictures',
+      name: 'pictures',
+      component: Pictures
     }
   ],
 });
