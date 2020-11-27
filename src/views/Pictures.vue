@@ -6,82 +6,82 @@
         <v-flex md6>
           <v-layout column class="info-text-container">
             <v-flex class="large-image">
-              <v-img src="/images/ceremonypics/table.jpg"/>
+              <v-img src="/images/ceremonypics_c/table.jpg"/>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/ChrisandMalka-229.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-147.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-235.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-210.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-229.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-147.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-235.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-210.jpg" max-width="220" class="row-img"/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/ChrisandMalka3.jpg" max-height="620" contain/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka3.jpg" max-height="620" contain/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/balloons.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/cake.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/malka-computer.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/tshirts.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/balloons.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/cake.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/malka-computer.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/tshirts.jpg" max-width="220" class="row-img"/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/camera1.jpg" max-height="620" contain/>
+                  <v-img src="/images/ceremonypics_c/camera1.jpg" max-height="620" contain/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/signing.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/camera2.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ceremony_bw.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ceremony1.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/signing.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/camera2.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ceremony_bw.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ceremony1.jpg" max-width="220" class="row-img"/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/chris_malka_judy.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-216.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-222.jpg" max-width="220" class="row-img"/>
-                  <v-img src="/images/ceremonypics/ChrisandMalka-226.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/chris_malka_judy.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-216.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-222.jpg" max-width="220" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-226.jpg" max-width="220" class="row-img"/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/cutting-cake.jpg" max-height="620" contain/>
+                  <v-img src="/images/ceremonypics_c/cutting-cake.jpg" max-height="620" contain/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/ChrisandMalka-227.jpg" max-width="295" class="row-img"/>
-                  <v-img src="/images/ceremonypics/malkaandmom.jpg" max-width="295" class="row-img"/>
-                  <v-img src="/images/ceremonypics/seelingfamily.jpg" max-width="295" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/ChrisandMalka-227.jpg" max-width="295" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/malkaandmom.jpg" max-width="295" class="row-img"/>
+                  <v-img src="/images/ceremonypics_c/seelingfamily.jpg" max-width="295" class="row-img"/>
                 </v-col>
               </v-row>
             </v-flex>
             <v-flex ma-5>
               <v-row>
                 <v-col class="d-flex child-flex">
-                  <v-img src="/images/ceremonypics/zoomcall.jpg" max-height="620" contain/>
+                  <v-img src="/images/ceremonypics_c/zoomcall.jpg" max-height="620" contain/>
                 </v-col>
               </v-row>
             </v-flex>
