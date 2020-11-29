@@ -27,7 +27,7 @@
                         </v-flex>
                         <v-flex md10>
                           This is a celebration of our wedding with our family/friends.
-                          We will be getting legally married ahead of time at the courthouse with our immediate family in attendance.
+                          We held a very small ceremony on August 6, 2020 in our back yard.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
