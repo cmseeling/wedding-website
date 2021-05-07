@@ -27,7 +27,101 @@
                         </v-flex>
                         <v-flex md10>
                           This is a celebration of our wedding with our family/friends.
-                          We will be getting legally married ahead of time at the courthouse with our immediate family in attendance.
+                          We held a very small ceremony on August 6, 2020 in our back yard.
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-divider/>
+
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">Q:</span>
+                        </v-flex>
+                        <v-flex md10 class="bold-text">
+                          Do I need to be vaccinated?
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">A:</span>
+                        </v-flex>
+                        <v-flex md10>
+                          Yes - For everyone's safety, due to the size of the event, we are asking guests to come only if you are fully vaccinated.
+                          If you will not be fully vaccinated by the time of the wedding we would love to see you at another time at a smaller gathering.
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-divider/>
+
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">Q:</span>
+                        </v-flex>
+                        <v-flex md10 class="bold-text">
+                          Are kids invited?
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">A:</span>
+                        </v-flex>
+                        <v-flex md10>
+                          If they are fully vaccinated, yes! We realize some kids will be too young for the vaccine. However because of the size of the event we do want
+                          everyone to be vaccinated for everyone's safety so we ask that you do not bring any kids that are not fully vaccinated.
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-divider/>
+
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">Q:</span>
+                        </v-flex>
+                        <v-flex md10 class="bold-text">
+                          Is the event indoor or outdoor?
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">A:</span>
+                        </v-flex>
+                        <v-flex md10>
+                          Both! We plan on socializing outdoors but the pavillion where we will be eating dinner and that we will be using in case of bad weather is an enclosed building.
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+
+                    <v-divider/>
+
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">Q:</span>
+                        </v-flex>
+                        <v-flex md10 class="bold-text">
+                          Do I need a mask?
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item class="faq-item">
+                      <v-list-item-content>
+                        <v-flex md1 xs1 text-center>
+                          <span class="qa-marker">A:</span>
+                        </v-flex>
+                        <v-flex md10>
+                          We plan on following state and park guidelines and will post an update closer to the reception.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
@@ -64,29 +158,6 @@
                           <span class="qa-marker">Q:</span>
                         </v-flex>
                         <v-flex md10 class="bold-text">
-                          Are kids invited?
-                        </v-flex>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item class="faq-item">
-                      <v-list-item-content>
-                        <v-flex md1 xs1 text-center>
-                          <span class="qa-marker">A:</span>
-                        </v-flex>
-                        <v-flex md10>
-                          Yes! The park has a playground a short distance from the pavilion. 
-                        </v-flex>
-                      </v-list-item-content>
-                    </v-list-item>
-
-                    <v-divider/>
-
-                    <v-list-item class="faq-item">
-                      <v-list-item-content>
-                        <v-flex md1 xs1 text-center>
-                          <span class="qa-marker">Q:</span>
-                        </v-flex>
-                        <v-flex md10 class="bold-text">
                           Where was that picture on the front of the website taken?
                         </v-flex>
                       </v-list-item-content>
@@ -110,7 +181,7 @@
                           <span class="qa-marker">Q:</span>
                         </v-flex>
                         <v-flex md10 class="bold-text">
-                          How did you guys meet?
+                          How did you meet?
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
