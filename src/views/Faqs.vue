@@ -27,7 +27,7 @@
                         </v-flex>
                         <v-flex md10>
                           This is a celebration of our wedding with our family/friends.
-                          We held a very small ceremony on August 6, 2020 in our back yard.
+                          We were married in a very small ceremony on August 6, 2020 in our back yard.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
@@ -51,7 +51,7 @@
                         </v-flex>
                         <v-flex md10>
                           Yes - For everyone's safety, due to the size of the event, we are asking guests to come only if you are fully vaccinated.
-                          If you will not be fully vaccinated by the time of the wedding we would love to see you at another time at a smaller gathering.
+                          If you will not be fully vaccinated by the time of the reception we would love to see you at another time at a smaller gathering.
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
