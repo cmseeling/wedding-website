@@ -6,7 +6,8 @@
           <v-container text-center>
             <v-layout row align-center>
               <v-flex v-for="link in navLinks" :key="link.id">
-                <router-link :to="link.path" :class="`header-link ${textColor}`">{{link.name}}</router-link>
+                <router-link :to="link.path" :class="`header-link ${textColor}`" v-if="link.type == 0">{{link.name}}</router-link>
+                <a :href="link.path" target="_blank" :class="`header-link ${textColor}`" v-else>{{link.name}}</a>
               </v-flex>
             </v-layout>
           </v-container>
@@ -39,11 +40,13 @@ export default Vue.extend({
   data() {
     return {
       navLinks: [
-        { id: 1, name: 'Home', path: `/${this.$route.params.guestType}` },
-        { id: 2, name: 'Venue & Schedule', path: `/${this.$route.params.guestType}/schedule` },
-        { id: 3, name: 'Travel & Accommodation', path: `/${this.$route.params.guestType}/accommodations` },
-        { id: 4, name: 'R.S.V.P.', path: `/${this.$route.params.guestType}/rsvp` },
-        { id: 5, name: 'FAQs', path: `/${this.$route.params.guestType}/faqs` },
+        { id: 1, type: 0, name: 'Home', path: `/${this.$route.params.guestType}` },
+        { id: 2, type: 1, name: 'Pictures!', path: `https://photos.app.goo.gl/NNPK6Qc1J7j6UcQNA` },
+        { id: 3, type: 0, name: 'Venue & Schedule', path: `/${this.$route.params.guestType}/schedule` },
+        { id: 4, type: 0, name: 'Travel & Accommodation', path: `/${this.$route.params.guestType}/accommodations` },
+        { id: 5, type: 0, name: 'R.S.V.P.', path: `/${this.$route.params.guestType}/rsvp` },
+        { id: 6, type: 0, name: 'Registry', path: `/${this.$route.params.guestType}/registry` },
+        { id: 7, type: 0, name: 'FAQs', path: `/${this.$route.params.guestType}/faqs` },
       ]
     };
   },
@@ -69,6 +72,10 @@ export default Vue.extend({
   .header-link {
     font-family: 'Courgette', cursive;
     font-size: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Courgette', cursive;
   }
 
   .info-text-container {

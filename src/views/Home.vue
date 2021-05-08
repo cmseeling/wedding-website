@@ -3,8 +3,8 @@
     <v-container text-center>
       <v-layout column>
         <v-flex>
-          <!-- <h1 :class="headerClass">Welcome! Our wedding reception with our {{$route.params.guestType}} will be {{date}}.</h1> -->
-          <h1 :class="headerClass">Welcome! More information coming soon. Rsvp Test version</h1>
+          <!-- <h1 style="background-color: orange">Due to Covid-19, we have decided to push our reception back to August 2021. Stay safe everyone!</h1> -->
+          <h1 :class="headerClass">Welcome! Our wedding reception with our {{$route.params.guestType}} will be {{date}}. Rsvp Test version</h1>
         </v-flex>
         <v-flex v-if="$vuetify.breakpoint.mdAndUp" mt-3>
           <v-img src="/images/city_museum_cropped.jpg" aspect-ratio="3" contain/>
@@ -28,9 +28,9 @@ export default Vue.extend({
   computed: {
     date() {
       if (this.$route.params.guestType.toLowerCase() === 'family') {
-        return 'August 8, 2020';
+        return 'August 7, 2021';
       } else {
-        return 'August 15, 2020';
+        return 'August 14, 2021';
       }
     },
     headerClass() {
