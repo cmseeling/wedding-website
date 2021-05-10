@@ -1,1 +1,1 @@
-export default {"endpoint":"https://freetiercosmos.documents.azure.com:443/","key":"pasnrzTP2EXDIEN3DmCbacndpR7EfY5PlOdlnkTrRSY7C5fhQQ5tl6TYOPA4GTv55CuKZi2Qj47lqdNQgF689w====","databaseId":"WeddingDatabase","containerId":"Reservations","partitionKey":{"kind":"Hash","paths":["/Id"]}};
+export default {"partitionKey":{"kind":"Hash","paths":["/DocType"]}};
