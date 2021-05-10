@@ -3,12 +3,12 @@ const fs = require('fs');
 
 console.log('Prebuild started. Gathering environment variables.');
 
-const sqlOptions = {
-  host: process.env.SQL_HOST,
-  port: 3306,
-  user: process.env.SQL_USER,
-  password: process.env.SQL_PW,
-  database: process.env.SQL_DATABASE
-};
+const config = {
+  endpoint: process.env.COSMOS_ENDPOINT,
+  key: process.env.COSMOS_KEY,
+  databaseId: process.env.COSMOS_DATABASE,
+  containerId: process.env.COSMOS_CONTAINER,
+  partitionKey: { kind: "Hash", paths: ["/DocType"] }
+}
 
-fs.writeFileSync('./src/lambdas/mysql/config.ts', `export default ${JSON.stringify(sqlOptions)};`);
+fs.writeFileSync('./src/lambdas/cosmos/config.ts', `export default ${JSON.stringify(config)};\n`);

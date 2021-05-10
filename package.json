@@ -13,11 +13,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@azure/cosmos": "^3.11.1",
     "@fortawesome/fontawesome-free": "^5.10.1",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "core-js": "^2.6.5",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "promise-mysql": "^4.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

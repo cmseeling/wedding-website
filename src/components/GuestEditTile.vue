@@ -16,10 +16,6 @@
             <v-container>
               <v-layout column>
                 <v-flex>
-                  <label class="label" :for="`menuChoice${value.Id}`">Menu Option</label>
-                  <v-select :id="`menuChoice${value.Id}`" solo v-model="value.MenuChoice" :items="menuChoices"/>
-                </v-flex>
-                <v-flex>
                   <label class="label">Dietary Restrictions</label>
                   <v-textarea v-model="value.DietaryNeeds" no-resize outlined rows="2"/>
                 </v-flex>

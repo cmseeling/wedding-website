@@ -18,6 +18,7 @@
             </v-flex>
           </v-layout>
         </v-container>
+        <span class="has-text-danger" v-if="showFormatError">Please enter your first and last names.</span>
         <span class="has-text-danger" v-if="showNameNotFound">We couldn't find you. Please check your name.</span>
         <span class="has-text-black text-center" v-if="showWrongSection">
           It looks like you were invited to a different date. Click <router-link :to="alternateLink">here</router-link> to go there.
@@ -56,6 +57,7 @@ interface Data {
   showStage1: boolean;
   guestName: string;
   showGroupLoader: boolean;
+  showFormatError: boolean;
   showNameNotFound: boolean;
   showWrongSection: boolean;
   alternateLink: string;
@@ -79,6 +81,7 @@ export default Vue.extend({
       showStage1: true,
       guestName: '',
       showGroupLoader: false,
+      showFormatError: false,
       showNameNotFound: false,
       showWrongSection: false,
       alternateLink: '',
@@ -112,31 +115,36 @@ export default Vue.extend({
 
       this.showGroupLoader = true;
       // console.log(this.guestName);
-      const firstName = this.guestName.slice(0, this.guestName.lastIndexOf(' '));
-      const lastName = this.guestName.slice(this.guestName.lastIndexOf(' ') + 1, this.guestName.length);
-      // console.log(firstName);
-      // console.log(lastName);
-
-      const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
-      // console.log(this.guests);
-      if (guests.length > 0) {
-        const guest = guests[0];
-        if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
-          this.showWrongSection = true;
-          this.alternateLink = `/${guest.GuestType.toLowerCase()}/rsvp?gid=${guest.GroupId}`;
-        } else {
-          this.showStage1 = false;
-          this.showStage2 = true;
-          this.guests = guests;
-        }
+      if (this.guestName.length === 0 || this.guestName.indexOf(' ') === -1) {
+        this.showFormatError = true;
       } else {
-        this.showNameNotFound = true;
+        const firstName = this.guestName.slice(0, this.guestName.lastIndexOf(' '));
+        const lastName = this.guestName.slice(this.guestName.lastIndexOf(' ') + 1, this.guestName.length);
+        // console.log(firstName);
+        // console.log(lastName);
+
+        const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
+        console.log(guests);
+        if (guests.length > 0) {
+          const guest = guests[0];
+          if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
+            this.showWrongSection = true;
+            this.alternateLink = `/${guest.GuestType.toLowerCase()}/rsvp?gid=${guest.GroupId}`;
+          } else {
+            this.showStage1 = false;
+            this.showStage2 = true;
+            this.guests = guests;
+          }
+        } else {
+          this.showNameNotFound = true;
+        }
       }
 
       this.showGroupLoader = false;
     },
 
     resetStage1Form() {
+      this.showFormatError = false;
       this.showNameNotFound = false;
       this.showWrongSection = false;
       this.alternateLink = '';
@@ -163,5 +171,9 @@ export default Vue.extend({
 <style scoped>
   .name-input {
     background-color: white !important;
+  }
+
+  .has-text-danger {
+    color: red;
   }
 </style>
