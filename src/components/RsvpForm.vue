@@ -60,22 +60,24 @@
             <h2>We invite you to celebrate with us on {{date}}</h2>
             <v-card>
               <v-card-title>
-                Invitation for {{group.Addressees[0]}} and {{group.Addressees[1]}}
+                <div>Invitation for {{group.Addressees[0]}} and {{group.Addressees[1]}}</div>
               </v-card-title>
               <v-card-text class="subtitle-1">
+                <p><strong>Please remember that all guests, including children, must be fully vaccinated by the date of the reception.</strong></p>
                 <p>Our dinner will include a vegetarian option. Please let us know if you have other dietary restrictions.</p>
                 <p>
-                  We have reserved a room at the hotel for us to gather for brunch on Sunday.  If you are not staying at the hotel and would like to join us for brunch,
+                  We have reserved a room at the hotel for us to gather for breakfast on Sunday.  If you are not staying at the hotel and would like to join us for breakfast,
                    just let us know so we can make arrangements!
                 </p>
                 <p>
-                  There will be a shuttle running to and from the hotel and park. You may register for it even if you are local or are staying at a different hotel.
+                  There will be a shuttle/bus from the hotel to the park and back. Please indicate if you would like to use it.
+                  It is available whether or not you are staying at the hotel.
                 </p>
                 <v-flex text-left v-for="(reservation, index) in group.Attendees" :key="index" shrink>
                   <v-container>
                     <v-layout row>
                       <v-flex md5>
-                        <label class="label" :for="`attendeeName${index}`">Name:</label>
+                        <label class="label" :for="`attendeeName${index}`">First and Last Name:</label>
                         <v-container>
                           <v-layout row>
                             <v-flex>
@@ -105,7 +107,7 @@
                     </v-layout>
                     <v-layout row>
                       <v-flex md2>
-                        <label class="label" :for="`brunch${index}`">Sunday Brunch</label>
+                        <label class="label" :for="`brunch${index}`">Sunday Breakfast</label>
                         <v-switch inset v-model="reservation.Brunch" :id="`brunch${index}`" :label="reservation.Brunch ? 'Yes' : 'No'"/>
                       </v-flex>
                       <v-flex md2 offset-md1>
@@ -128,8 +130,12 @@
                 <v-flex shrink text-left class="seprow">
                   <v-btn @click="addGuestRow" color="success"><i class="fas fa-plus-circle"></i>&nbsp;Add Guest</v-btn>
                 </v-flex>
-                <v-flex v-if="showSaveSuccessMessage" class="seprow">
-                  <div class="success-text">Your responses have been saved. Thank you!</div>
+                <v-flex class="seprow">
+                  <div v-if="showSaveSuccessMessage"  class="success-text">Your responses have been saved. Thank you!</div>
+                  <div v-if="showEmptyNamesError" class="has-text-danger">Please make sure a name has been entered for each guest.</div>
+                  <div v-if="showSaveError" class="has-text-danger">
+                    There was a problem saving your rsvp. Please try again. If the problem persists, please call Chris or Malka to rsvp.
+                  </div>
                 </v-flex>
                 <v-flex class="seprow">
                   <v-btn color="info" :loading="showGroupLoader" :disabled="showGroupLoader" @click="saveGroup">Submit</v-btn>
@@ -145,14 +151,14 @@
 </template>
 
 <script lang="ts">
+import { forEach } from 'lodash';
 import Vue from 'vue';
 import LambdaAPI from '../api/LambdaAPI';
-import { Guest } from '../models/Guest';
-import Layout from '@/components/Layout.vue';
 
 interface Data {
   showStage1: boolean;
   guestName: string;
+  parsedName: string;
   showGroupLoader: boolean;
   showFormatError: boolean;
   showNameNotFound: boolean;
@@ -162,16 +168,10 @@ interface Data {
   showAccept: boolean;
   showStage2: boolean;
   group: any;
+  showEmptyNamesError: boolean;
+  showSaveError: boolean;
   showSaveLoader: boolean;
   showSaveSuccessMessage: boolean;
-}
-
-interface Reservation {
-  Name: string;
-  Brunch: boolean;
-  Hotel: boolean;
-  Shuttle: boolean;
-  DietaryRestrictions: string;
 }
 
 export default Vue.extend({
@@ -186,6 +186,7 @@ export default Vue.extend({
     return {
       showStage1: true,
       guestName: '',
+      parsedName: '',
       showGroupLoader: false,
       showFormatError: false,
       showNameNotFound: false,
@@ -194,14 +195,9 @@ export default Vue.extend({
       showStage2: false,
       showDecline: false,
       showAccept: false,
-      group: {
-        Id: undefined,
-        GuestType: '',
-        GroupId: undefined,
-        Addressees: [] as string[],
-        Attendees: [] as Reservation[],
-        DietaryNeeds: ''
-      },
+      group: null,
+      showEmptyNamesError: false,
+      showSaveError: false,
       showSaveLoader: false,
       showSaveSuccessMessage: false
     };
@@ -223,11 +219,20 @@ export default Vue.extend({
         this.resetStage2Form();
         if (newId) {
           // console.log(`fetching group ${newId}`);
-          const guests = await LambdaAPI.getGroupById(newId);
+          const group = await LambdaAPI.getGroupById(newId);
+          if (group.Attendees.length === 0) {
+            group.Attendees.push({
+              Id: 1,
+              Name: this.parsedName,
+              Brunch: false,
+              Hotel: false,
+              Shuttle: false,
+              DietaryRestrictions: ''
+            });
+          }
           this.showStage1 = false;
           this.showStage2 = true;
-          // this.guests = guests;
-          // console.log(this.guests);
+          this.group = group;
         }
       }
     }
@@ -243,54 +248,52 @@ export default Vue.extend({
       } else {
         const firstName = this.guestName.slice(0, this.guestName.lastIndexOf(' '));
         const lastName = this.guestName.slice(this.guestName.lastIndexOf(' ') + 1, this.guestName.length);
+        this.parsedName = `${firstName} ${lastName}`;
         // console.log(firstName);
         // console.log(lastName);
 
-        // const guests = await LambdaAPI.getGroupByGuestName(firstName, lastName);
-        const group = {
-          Id: 1,
-          GuestType: 'Family',
-          GroupId: 1,
-          Addressees: ['Pete Seeling', 'Tina Seeling'],
-          Attendees: [
-            {
-              Name: 'Pete Seeling',
-              Brunch: false,
-              Hotel: false,
-              Shuttle: false,
-              DietaryRestrictions: ''
-            },
-            {
-              Name: 'Tina Seeling',
-              Brunch: false,
-              Hotel: false,
-              Shuttle: false,
-              DietaryRestrictions: ''
-            }
-          ] as Reservation[],
-          DietaryNeeds: ''
-        };
+        const group = await LambdaAPI.getGroupByGuestName(this.parsedName);
 
-        // console.log(guests);
-        // if (guests.length > 0) {
-        //   const guest = guests[0];
-        //   if (guest.GuestType.toLowerCase() !== this.section.toLowerCase()) {
-        //     this.showWrongSection = true;
-        //     this.alternateLink = `/${guest.GuestType.toLowerCase()}/rsvp?gid=${guest.GroupId}`;
-        //   } else {
-        //     this.showStage1 = false;
-        //     this.showStage2 = true;
-        //     this.guests = guests;
-        //   }
-        // } else {
-        //   this.showNameNotFound = true;
-        // }
+        // const group = {
+        //   Id: 1,
+        //   GuestType: 'Family',
+        //   GroupId: 1,
+        //   Addressees: ['Pete Seeling', 'Tina Seeling'],
+        //   Attendees: [
+        //     {
+        //       Name: 'Pete Seeling',
+        //       Brunch: false,
+        //       Hotel: false,
+        //       Shuttle: false,
+        //       DietaryRestrictions: ''
+        //     },
+        //     {
+        //       Name: 'Tina Seeling',
+        //       Brunch: false,
+        //       Hotel: false,
+        //       Shuttle: false,
+        //       DietaryRestrictions: ''
+        //     }
+        //   ] as Reservation[],
+        //   DietaryNeeds: ''
+        // };
 
-        console.log(group);
+        // console.log(group);
         if (group && group.Addressees.length > 0) {
+          if (group.Attendees.length === 0) {
+            group.Attendees.push({
+              Id: 1,
+              Name: this.parsedName,
+              Brunch: false,
+              Hotel: false,
+              Shuttle: false,
+              DietaryRestrictions: ''
+            });
+          }
+
           if (group.GuestType.toLowerCase() !== this.section.toLowerCase()) {
             this.showWrongSection = true;
-            this.alternateLink = `/${group.GuestType.toLowerCase()}/rsvp?gid=${group.GroupId}`;
+            this.alternateLink = `/${group.GuestType.toLowerCase()}/rsvp?gid=${group.Id}`;
           } else {
             this.showStage1 = false;
             this.showStage2 = true;
@@ -307,7 +310,7 @@ export default Vue.extend({
     onAcceptClick() {
       this.showStage2 = false;
 
-      if(this.group.Attendees.length === 0) {
+      if (this.group.Attendees.length === 0) {
         this.group.Attendees.push({Name: this.guestName, DietaryRestrictions: ''});
       }
 
@@ -323,25 +326,30 @@ export default Vue.extend({
       this.showFormatError = false;
       this.showNameNotFound = false;
       this.showWrongSection = false;
+      this.showStage2 = false;
+      this.showDecline = false;
+      this.showAccept = false;
       this.alternateLink = '';
     },
 
     resetStage2Form() {
       this.showStage1 = true;
       this.showStage2 = false;
-      this.group = {
-        Id: undefined,
-        GuestType: '',
-        GroupId: undefined,
-        Addressees: [] as string[],
-        Attendees: [] as Reservation[],
-        DietaryNeeds: ''
-      };
+      this.group = null;
+      this.showEmptyNamesError = false;
+      this.showSaveError = false;
       this.showSaveSuccessMessage = false;
     },
 
     addGuestRow() {
-      this.group.Attendees.push({Name: '', DietaryRestrictions: ''});
+      this.group.Attendees.push({
+        Id: this.group.Attendees.length + 1,
+        Name: '',
+        Brunch: false,
+        Hotel: false,
+        Shuttle: false,
+        DietaryRestrictions: ''
+      });
     },
 
     removeGuestRow(index: number) {
@@ -349,11 +357,29 @@ export default Vue.extend({
     },
 
     async saveGroup() {
-      // console.log(this.guests);
+      // console.log(this.group);
       this.showSaveLoader = true;
-      // await LambdaAPI.saveRsvps(this.guests);
+
+      let attendeesHaveNames = true;
+      forEach(this.group.Attendees, (attendee) => {
+        if(attendee.Name === '') {
+          attendeesHaveNames = false;
+        }
+      });
+      // console.log(attendeesHaveNames);
+
+      if(attendeesHaveNames) {
+        try {
+          const response = await LambdaAPI.saveRsvps(this.group);
+          this.showSaveSuccessMessage = true;
+        } catch (err) {
+          this.showSaveError = true;
+          // console.log(err);
+        }
+      } else {
+        this.showEmptyNamesError = true;
+      }
       this.showSaveLoader = false;
-      this.showSaveSuccessMessage = true;
     }
   }
 });

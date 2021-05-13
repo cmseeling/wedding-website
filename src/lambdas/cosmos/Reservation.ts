@@ -1,13 +1,8 @@
 export default interface Reservation {
   Id: number;
-  DocumentId: string;
-  FirstName: string;
-  LastName: string;
-  GroupId: string;
-  GuestType: string;
-  Attending: boolean;
+  Name: string;
   Brunch: boolean;
-  MenuChoice: string;
-  DietaryNeeds: string;
-  DocType: string;
+  Hotel: boolean;
+  Shuttle: boolean;
+  DietaryRestrictions: string;
 }
