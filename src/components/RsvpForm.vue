@@ -44,7 +44,7 @@
               <v-card-text class="subtitle-1">
                 <p>Will anyone from your party be attending?</p>
                 <v-btn @click="onAcceptClick">Yes</v-btn>
-                <v-btn class="decline-button" @click="onDeclineClick">No</v-btn>
+                <v-btn class="decline-button" @click="onDeclineClick" :loading="showGroupLoader" :disabled="showGroupLoader">No</v-btn>
               </v-card-text>
             </v-card>
           </v-flex>
@@ -53,6 +53,9 @@
               <v-card-title></v-card-title>
               <v-card-text class="subtitle-1">
                 <p>We're sorry you can't make it. We hope to see you sometime soon!</p>
+                <div v-if="showSaveError" class="has-text-danger">
+                    There was a problem saving your rsvp. Please try again. If the problem persists, please call Chris or Malka to rsvp.
+                  </div>
               </v-card-text>
             </v-card>
           </v-flex>
@@ -317,9 +320,17 @@ export default Vue.extend({
       this.showAccept = true;
     },
 
-    onDeclineClick() {
+    async onDeclineClick() {
       this.showStage2 = false;
+      this.showSaveLoader = true;
+      this.group.Attendees = [];
+      try {
+          const response = await LambdaAPI.saveRsvps(this.group);
+        } catch (err) {
+          this.showSaveError = true;
+        }
       this.showDecline = true;
+      this.showSaveLoader = false;
     },
 
     resetStage1Form() {
