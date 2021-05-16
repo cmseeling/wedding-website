@@ -25,7 +25,7 @@
                   <v-layout column>
                     <v-flex class="seprow">
                       <span class="has-text-danger" v-if="showFormatError">Please enter your first and last names.</span>
-                      <span class="has-text-danger" v-if="showNameNotFound">We couldn't find you. Please check your name.</span>
+                      <span class="has-text-danger" v-if="showNameNotFound">We couldn't find you. Please enter your name as it appears on the invitation.</span>
                       <span class="has-text-black text-center" v-if="showWrongSection">
                         It looks like you were invited to a different date. Click <router-link :to="alternateLink">here</router-link> to go there.
                       </span>

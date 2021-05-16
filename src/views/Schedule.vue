@@ -11,16 +11,11 @@
             <v-flex ma-5 text-left class="info-text">
               <h2>Venue</h2>
               <v-card>
-                <!-- <v-card-title>
-                  Location
-                </v-card-title> -->
                 <v-card-title></v-card-title>
                 <v-card-text class="subtitle-1">
                   <p>We will be at Bryant Lake Regional Park pavilion, which is located in Eden Prairie, a suburb of Minneapolis.</p>
                   <p>The park address is <strong>6800 Rowland Rd, Eden Prairie, MN 55344</strong>.  The park website is <a href="https://www.threeriversparks.org/location/bryant-lake-regional-park">here.</a></p>
                   <p>Note that this is a different park from what we had planned on our original 2020 date.</p>
-                  <!-- <p>We may play this by ear a little to take advantage of/avoid the weather, but here’s the general plan:</p> -->
-                  <!-- <strong>Schedule information coming soon!</strong> -->
                 </v-card-text>
               </v-card>
             </v-flex>
@@ -33,19 +28,19 @@
                   <p>More details coming soon!</p>
                 </v-card-text>
               </v-card>
-              <!-- <v-card>
+              <v-card>
                 <v-card-title>
                   {{saturday}}
                 </v-card-title>
                 <v-card-text>
                   <v-list>
-                      <v-list-item>
+                    <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            <span class="time-text">1:00 - 1:30</span>
+                            <span class="time-text">1:30</span>
                           </v-flex>
                           <v-flex md10>
-                            Arrival
+                            Shuttle departs Embassy Suites for Bryant Lake Regional Park
                           </v-flex>
                         </v-list-item-content>
                       </v-list-item>
@@ -55,6 +50,16 @@
                             <span class="time-text">1:30 - 2:00</span>
                           </v-flex>
                           <v-flex md10>
+                            Arrival
+                          </v-flex>
+                        </v-list-item-content>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-content>
+                          <v-flex md2 xs12>
+                            <span class="time-text">2:00 - 2:30</span>
+                          </v-flex>
+                          <v-flex md10>
                             Welcome, speeches, etc.
                           </v-flex>
                         </v-list-item-content>
@@ -62,7 +67,7 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            <span class="time-text">2:00 - 4:30</span>
+                            <span class="time-text">2:30 - 4:30</span>
                           </v-flex>
                           <v-flex md10>
                             Eat snacks!  Enjoy the park!  (Or stay indoors and play board games and speculate about when the rain will stop.)
@@ -101,20 +106,27 @@
                       <v-list-item>
                         <v-list-item-content>
                           <v-flex md2 xs12>
-                            <span class="time-text">9:00 - 11:00</span>
+                            <span class="time-text">7:30 - 9:30</span>
                           </v-flex>
                           <v-flex md10>
-                            Breakfast at the hotel
+                            Breakfast served at the hotel
+                          </v-flex>
+                        </v-list-item-content>
+                      </v-list-item>
+                      <v-list-item>
+                        <v-list-item-content>
+                          <v-flex md2 xs12>
+                            <span class="time-text">7:00 - 12:00</span>
+                          </v-flex>
+                          <v-flex md10>
+                            Visiting in {{room}} Conference room
                           </v-flex>
                         </v-list-item-content>
                       </v-list-item>
                     </v-list>
                 </v-card-text>
-              </v-card> -->
+              </v-card>
             </v-flex>
-            <!-- <v-flex class="large-image">
-              <v-img src="/images/deck_view.jpg"/>
-            </v-flex> -->
           </v-layout>
         </v-flex>
         <v-flex/>
@@ -144,6 +156,13 @@ export default Vue.extend({
         return 'Sunday, August 8';
       } else {
         return 'Sunday August 15';
+      }
+    },
+    room() {
+      if (this.$route.params.guestType.toLowerCase() === 'family') {
+        return 'Nokomis';
+      } else {
+        return 'Itasca';
       }
     }
   }
