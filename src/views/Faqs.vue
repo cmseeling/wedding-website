@@ -164,7 +164,7 @@
                           <p>
                             If you are arriving in Terminal 1 (most major airlines), signs that say "ground transportation" and then "light rail" will direct you to a
                             tram that you take to the actual light rail station. The only thing the tram does is go to the light rail station, and it runs every
-                            2 minutes.You can get on the tram on either side of the hall.
+                            2 minutes. You can get on the tram on either side of the hall.
                           </p>
                           <p>
                             There will be a ticket machine before you go down the last escalator to the actual light rail platform.

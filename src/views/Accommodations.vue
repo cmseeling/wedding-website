@@ -17,10 +17,6 @@
                   <p>
                     To reserve a room in the hotel block, click <a :href="hotelUrl">here</a>
                     or call 952-854-1000 or 1-800-Embassy, and let them know you need to make a reservation in the Key/Seeling {{groupCodeText}}.
-                    <!-- The rooms are available for block rate until July 17, 2020. -->
-                  </p>
-                  <p>
-                    We will post more details at a later date!
                   </p>
                 </v-card-text>
               </v-card>
