@@ -37,9 +37,6 @@
                     light rail line as the hotel and airport. Lyft and Uber are also available. If you want more flexibility in terms of arrival/departure from the reception,
                     or if you want to do a lot of suburban sightseeing, you may want to rent a car.
                   </p>
-                  <p>
-                    More details will be forthcoming!
-                  </p>
                 </v-card-text>
               </v-card>
             </v-flex>

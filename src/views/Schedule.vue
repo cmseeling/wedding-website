@@ -25,7 +25,6 @@
                 <v-card-title>{{saturday}}</v-card-title>
                 <v-card-text class="subtitle-1">
                   <p>We are planning on starting the reception in the early afternoon.</p>
-                  <p>More details coming soon!</p>
                 </v-card-text>
               </v-card>
               <v-card>
