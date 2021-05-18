@@ -16,7 +16,7 @@
                   </p>
                   <p>
                     To reserve a room in the hotel block, click <a :href="hotelUrl">here</a>
-                    or call 952-854-1000 or 1-800-Embassy, and let them know you need to make a reservation in the Key/Seeling {{groupCodeText}}.
+                    or call 952-854-1000 or 1-800-Embassy, and let them know you need to make a reservation in the Key/Seeling {{groupCodeText}}.{{reservationDeadline}}
                   </p>
                 </v-card-text>
               </v-card>
@@ -72,6 +72,13 @@ export default Vue.extend({
         return 'Family block, group code SEE';
       } else {
         return 'Friends block, group code KEY';
+      }
+    },
+    reservationDeadline() {
+      if (this.isFamily) {
+        return ' The deadline to reserve a hotel in this block is July 16.';
+      } else {
+        return '';
       }
     }
   }
