@@ -66,6 +66,7 @@
                 <div>Invitation for {{group.Addressees[0]}} and {{group.Addressees[1]}}</div>
               </v-card-title>
               <v-card-text class="subtitle-1">
+                <h3>Please enter the name of each person that will be attending.</h3>
                 <p><strong>Please remember that all guests, including children, must be fully vaccinated by the date of the reception.</strong></p>
                 <p>Our dinner will include a vegetarian option. Please let us know if you have other dietary restrictions.</p>
                 <p>
