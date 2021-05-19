@@ -39,7 +39,7 @@
             <h2>We invite you to celebrate with us on {{date}}</h2>
             <v-card>
               <v-card-title>
-                Invitation for {{group.Addressees[0]}}<span v-if="group.Addressees.length > 1"> and {{group.Addressees[1]}}</span>
+                Invitation for {{group.Addressees[0]}}<span v-if="group.Addressees.length > 1">&nbsp;and {{group.Addressees[1]}}</span>
               </v-card-title>
               <v-card-text class="subtitle-1">
                 <p>Will anyone from your party be attending?</p>
