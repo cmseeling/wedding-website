@@ -132,7 +132,7 @@
                   <hr/>
                 </v-flex>
                 <v-flex shrink text-left class="seprow">
-                  <v-btn @click="addGuestRow" color="success"><i class="fas fa-plus-circle"></i>&nbsp;Add Guest</v-btn>
+                  <v-btn @click="addGuestRow" color="success"><i class="fas fa-plus-circle"></i>&nbsp;Add Another Guest</v-btn>
                 </v-flex>
                 <v-flex class="seprow">
                   <div v-if="showSaveSuccessMessage"  class="success-text">Your responses have been saved. Thank you!</div>
