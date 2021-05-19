@@ -39,7 +39,7 @@
             <h2>We invite you to celebrate with us on {{date}}</h2>
             <v-card>
               <v-card-title>
-                Invitation for {{group.Addressees[0]}} and {{group.Addressees[1]}}
+                Invitation for {{group.Addressees[0]}}<span v-if="group.Addressees.length > 1"> and {{group.Addressees[1]}}</span>
               </v-card-title>
               <v-card-text class="subtitle-1">
                 <p>Will anyone from your party be attending?</p>
@@ -325,6 +325,7 @@ export default Vue.extend({
       this.showStage2 = false;
       this.showSaveLoader = true;
       this.group.Attendees = [];
+      this.group.Declined = true;
       try {
           const response = await LambdaAPI.saveRsvps(this.group);
         } catch (err) {
@@ -382,6 +383,7 @@ export default Vue.extend({
 
       if(attendeesHaveNames) {
         try {
+          this.group.Declined = false;
           const response = await LambdaAPI.saveRsvps(this.group);
           this.showSaveSuccessMessage = true;
         } catch (err) {
