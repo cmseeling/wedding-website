@@ -70,8 +70,8 @@
                 <p><strong>Please remember that all guests, including children, must be fully vaccinated by the date of the reception.</strong></p>
                 <p>Our dinner will include a vegetarian option. Please let us know if you have other dietary restrictions.</p>
                 <p>
-                  We have reserved a room at the hotel for us to gather for breakfast on Sunday.  If you are not staying at the hotel and would like to join us for breakfast,
-                   just let us know so we can make arrangements!
+                  We have reserved a room at the hotel for us to gather for complimentary breakfast on Sunday. Breakfast will be served 7:30 - 9:30 and we have the room reserved until noon.
+                  If you are not staying at the hotel and would like to join us for breakfast, just let us know so we can make arrangements!
                 </p>
                 <p>
                   There will be a shuttle/bus from the hotel to the park and back. Please indicate if you would like to use it.
