@@ -64,39 +64,28 @@
                     <v-list-item>
                       <v-list-item-content>
                         <v-flex md2 xs12>
-                          <span class="time-text">1:30 - 2:00</span>
+                          <span class="time-text">2:00</span>
                         </v-flex>
                         <v-flex md10>
-                          Arrival
+                          Welcome, drinks and appetizers, pictures, enjoy the
+                          park!
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-content>
                         <v-flex md2 xs12>
-                          <span class="time-text">2:00 - 2:30</span>
+                          <span class="time-text">4:15</span>
                         </v-flex>
                         <v-flex md10>
-                          Welcome, speeches, etc.
+                          Speeches
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-content>
                         <v-flex md2 xs12>
-                          <span class="time-text">2:30 - 4:30</span>
-                        </v-flex>
-                        <v-flex md10>
-                          Eat snacks! Enjoy the park! (Or stay indoors and play
-                          board games and speculate about when the rain will
-                          stop.)
-                        </v-flex>
-                      </v-list-item-content>
-                    </v-list-item>
-                    <v-list-item>
-                      <v-list-item-content>
-                        <v-flex md2 xs12>
-                          <span class="time-text">4:30 - 5:30</span>
+                          <span class="time-text">4:30</span>
                         </v-flex>
                         <v-flex md10>
                           Dinner
@@ -106,11 +95,30 @@
                     <v-list-item>
                       <v-list-item-content>
                         <v-flex md2 xs12>
-                          <span class="time-text">5:30 - 8:00</span>
+                          <span class="time-text">5:30</span>
                         </v-flex>
                         <v-flex md10>
-                          Board games and dessert (or enjoy the park, if it was
-                          raining earlier)
+                          Dessert, board games, and enjoy the park!
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-flex md2 xs12>
+                          <span class="time-text">6:30</span>
+                        </v-flex>
+                        <v-flex md10>
+                          First shuttle back to hotel
+                        </v-flex>
+                      </v-list-item-content>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-content>
+                        <v-flex md2 xs12>
+                          <span class="time-text">8:00</span>
+                        </v-flex>
+                        <v-flex md10>
+                          Second (and final) shuttle back to hotel
                         </v-flex>
                       </v-list-item-content>
                     </v-list-item>
