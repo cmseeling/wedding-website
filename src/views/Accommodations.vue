@@ -42,7 +42,7 @@
                   </p>
                   <p>
                     We will be providing a shuttle from the hotel to the
-                    reception venue, leaving at 1:30pm and returning at 6:00pm
+                    reception venue, leaving at 1:30pm and returning at 6:30pm
                     and 8:00pm. Please note on your RSVP if you plan to use the
                     shuttle. If you want to sight-see, many attractions in
                     Minneapolis are also located along the same light rail line
