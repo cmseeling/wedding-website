@@ -147,7 +147,7 @@
                           <span class="time-text">7:30 AM - 12:00</span>
                         </v-flex>
                         <v-flex md10>
-                          Visiting in {{ room }} Conference room. Bring your
+                          Visiting in Tamarack Conference room. Bring your
                           breakfast!
                         </v-flex>
                       </v-list-item-content>
