@@ -1,1 +1,1 @@
-export default {"host":"localhost","port":3306,"user":"weddingapp","password":"weddingapppw","database":"GuestListv1"};
+export default {"host":"localhost","port":0000,"user":"usr","password":"pswd","database":"dbname"};
